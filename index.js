@@ -21,17 +21,20 @@ const LONG_URLS = [  // ← Your destination / money pages
   'https://get2short.com',
   'https://lksfy.com',
   'https://inshorturl.com',
+  'https://www.instagram.com/neuralcontrol_media',
   'https://nowshort.com',
   'https://makelinks.in',
-  'https://get2short.com/DqLV8U1'
+  'https://get2short.com/DqLV8U1',
+  'https://nowshort.com/9rZyx',
   // add more...
 ];
 
 const API_KEYS = {
   alpha_links:     'PASTE_YOUR_ALPHA_LINKS_API_KEY_HERE',
-  get2short:       'PASTE_YOUR_GET2SHORT_API_KEY_HERE',
+  get2short:       'c8713984c08289d432bda68d5063d2ba7eae574',
   inshorturl:      'PASTE_YOUR_INSHORTURL_API_KEY_HERE',
   babylinks:       'PASTE_YOUR_BABYLINKS_API_KEY_HERE',
+  nowshort:'d1eb8788d6aa6938a4feaa00b652b53055b75745',
   // add lksfy / nowshort / makelinks keys if you get them
 };
 
