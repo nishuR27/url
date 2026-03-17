@@ -13,8 +13,17 @@ puppeteer.use(StealthPlugin());
 
 // ====================== CONFIG ======================
 const LONG_URLS = [  // ← Your destination / money pages
-  'https://example.com/offer1',
-  'https://example.com/offer2?ref=123',
+  'https://pin.it/5g5bij7RR',
+  'https://github.com/lakshya1304',
+  'https://babylinks.in/3ARhg',
+  'https://babylinks.in',
+  'https://alpha-links.in',
+  'https://get2short.com',
+  'https://lksfy.com',
+  'https://inshorturl.com',
+  'https://nowshort.com',
+  'https://makelinks.in',
+  'https://get2short.com/DqLV8U1'
   // add more...
 ];
 
