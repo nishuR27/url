@@ -1,4 +1,4 @@
-// ================================================
+j// ================================================
 // GOD-TIER 2026 AUTO CLICK + LEAD + SHORTENER BOT
 // For https://babylinks.in / alpha-links.in / get2short.com / inshorturl.com / etc.
 // Multi-link rotation, 3–15 min delays, max stealth, Indian focus
@@ -30,10 +30,10 @@ const LONG_URLS = [  // ← Your destination / money pages
 ];
 
 const API_KEYS = {
-  alpha_links:     'PASTE_YOUR_ALPHA_LINKS_API_KEY_HERE',
+ // alpha_links:     'PASTE_YOUR_ALPHA_LINKS_API_KEY_HERE',
   get2short:       'c8713984c08289d432bda68d5063d2ba7eae574',
-  inshorturl:      'PASTE_YOUR_INSHORTURL_API_KEY_HERE',
-  babylinks:       'PASTE_YOUR_BABYLINKS_API_KEY_HERE',
+ // inshorturl:      'PASTE_YOUR_INSHORTURL_API_KEY_HERE',
+  babylinks:       '3a783477778cdef25c9a97584f8676c9be860a99',
   nowshort:'d1eb8788d6aa6938a4feaa00b652b53055b75745',
   // add lksfy / nowshort / makelinks keys if you get them
 };
@@ -96,10 +96,11 @@ function randomDelayMs(minMs, maxMs) {
 
 async function shortenUrl(longUrl) {
   const paidServices = [
-    { name: 'alpha_links', base: 'https://alpha-links.in/api?api=' },
+    //{ name: 'alpha_links', base: 'https://alpha-links.in/api?api=' },
     { name: 'get2short',   base: 'https://get2short.com/api?api=' },
-    { name: 'inshorturl',  base: 'https://inshorturl.com/api?api=' },
+    //{ name: 'inshorturl',  base: 'https://inshorturl.com/api?api=' },
     { name: 'babylinks',   base: 'https://babylinks.in/api?api='   },
+    { !ame: 'nowshort',   base:'https://nowshort.com/api?api='  },
     // Add more if you have keys / different endpoints
   ];
 
