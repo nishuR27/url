@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Short Link Control</title>
+    <style>
+      :root {
+        --bg: #0f1724;
+        --panel: #0b1220;
+        --muted: #9aa4b2;
+        --accent: #3b82f6;
+        --card: #071025;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family:
+          Inter,
+          system-ui,
+          Segoe UI,
+          Roboto,
+          Arial;
+      }
+      body {
+        background: linear-gradient(180deg, #071428 0%, #051123 100%);
+        color: #e6eef8;
+        padding: 18px;
+      }
+      .top {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+        flex: 1;
+        align-items: center;
+      }
+      .controls input,
+      .controls select {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: transparent;
+        color: inherit;
+      }
+      .controls button {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 0;
+        background: var(--accent);
+        color: white;
+        cursor: pointer;
+      }
+      .controls .ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 12px;
+        align-items: start;
+      }
+      .panel {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 4px 18px rgba(2, 6, 23, 0.6);
+      }
+      #previews {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .iframes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 8px;
+      }
+      .iframes iframe {
+        width: 100%;
+        height: 280px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      #logs {
+        height: 200px;
+        overflow: auto;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 8px;
+        border-radius: 6px;
+        font-family: monospace;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .settings {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      @media (max-width: 950px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="brand">Short Link Control</div>
+      <div class="controls panel">
+        <input
+          id="url"
+          placeholder="https://nowshort.com/XYZ"
+          style="flex: 1"
+        />
+        <input id="count" type="number" value="1" style="width: 84px" />
+        <input id="interval" type="number" value="5" style="width: 84px" />
+        <button id="start">Start</button>
+        <button id="stop" class="ghost">Stop</button>
+        <button id="showHar" class="ghost">Show HAR</button>
+      </div>
+      <div class="settings panel small">
+        <label class="muted">Previews:</label>
+        <select id="previewCount">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+        <label class="muted">Device:</label>
+        <select id="device">
+          <option value="">Responsive</option>
+          <option value="1366x768">Desktop</option>
+          <option value="1024x768">Tablet</option>
+          <option value="375x812">Mobile</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="panel" id="previews">
+        <div
+          class="row"
+          style="justify-content: space-between; align-items: center"
+        >
+          <strong>Preview</strong>
+          <div class="small muted">Resize and open preview windows</div>
+        </div>
+        <div class="iframes" id="iframeContainer">
+          <iframe src="about:blank" class="previewFrame"></iframe>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+          "
+        >
+          <strong>Logs</strong>
+          <div class="small muted">Live events and HAR snippets</div>
+        </div>
+        <div id="logs"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
